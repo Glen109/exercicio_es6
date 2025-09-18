@@ -1,18 +1,11 @@
-let NotasAlunos = new Map();
-NotasAlunos.set("nomes", ["jorge", "maria", "carlos", "jose", "pastel"])
-NotasAlunos.set("notas", [5, 3, 9, 10, 6])
-const Resultado = []
+const alunos = [
+    { nome: "Jorge", nota: 5 },
+    { nome: "Maria", nota: 3 },
+    { nome: "Carlos", nota: 9 },
+    { nome: "Jose", nota: 10 },
+    { nome: "Pastel", nota: 6 },
+];
 
-function aprovados(map) {
-    let nomes = map.get("nomes");
-    let notas = map.get("notas");
+const aprovados = alunos.filter(aluno => aluno.nota >= 6);
 
-    for (var i = 0; i < nomes.length; i++) {
-        if (notas[i] >= 6) {
-            Resultado.push({nome: nomes[i], nota: notas[i]});
-        }
-    }
-    return Resultado;
-}
-
-console.log("Aprovados:", aprovados(NotasAlunos));
+console.log("Aprovados:", aprovados);
